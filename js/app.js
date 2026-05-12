@@ -1,5 +1,4 @@
-const STORAGE_SAVE_KEY = "launchdesk-v1-items";
-const STORAGE_LOAD_KEY = "launchdesk-items-v1"; // Intentional bug: this key should match STORAGE_SAVE_KEY.
+const STORAGE_KEY = "launchdesk-v1-items";
 
 const demoChecks = [
   {
@@ -104,7 +103,7 @@ renderApp();
 logActivity("Demo data loaded. Start by testing the checklist workflows.");
 
 function loadChecks() {
-  const saved = localStorage.getItem(STORAGE_LOAD_KEY);
+  const saved = localStorage.getItem(STORAGE_KEY);
 
   if (!saved) {
     return [...demoChecks];
@@ -119,7 +118,7 @@ function loadChecks() {
 }
 
 function saveChecks() {
-  localStorage.setItem(STORAGE_SAVE_KEY, JSON.stringify(checks));
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(checks));
 }
 
 function handleAddCheck(event) {
