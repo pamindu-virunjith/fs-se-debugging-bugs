@@ -172,7 +172,7 @@ function applyFilters() {
 
   if (selectedStatus !== "All") {
     filtered = filtered.filter((check) => check.status === selectedStatus);
-  } // Intentional bug: status filter compares against priority.
+  }
 
   if (selectedPriority !== "All") {
     filtered = filtered.filter((check) => check.priority === selectedPriority);
@@ -233,7 +233,7 @@ function renderRows(list) {
 
 function updateMetrics() {
   const total = checks.length;
-  const fixed = checks.filter((check) => check.status === "Complete").length; // Intentional bug: valid fixed status is "Fixed".
+  const fixed = checks.filter((check) => check.status === "Fixed").length;
   const criticalOpen = checks.filter(
     (check) => check.priority === "Critical" && check.status !== "Fixed",
   ).length;
