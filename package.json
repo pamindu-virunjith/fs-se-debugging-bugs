@@ -4,7 +4,7 @@
   "private": true,
   "description": "A polished but intentionally broken website launch readiness checker for debugging practice.",
   "scripts": {
-    "dev": "python3 -m http.server 5173",
-    "start": "python3 -m http.server 5173"
+    "dev": "node api.js && python3 -m http.server 5173",
+    "start": "node api.js && python3 -m http.server 5173"
   }
 }
